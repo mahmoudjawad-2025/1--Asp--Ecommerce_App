@@ -73,20 +73,6 @@ It includes:
 
 ```plaintext
 
-├── BLL
-│   ├── Services
-│   │   ├── AuthenticationService.cs
-│   │   ├── GenericService.cs
-│   │   ├── UserProgressService.cs
-│   │   └── FileService.cs
-│   ├── DTOs
-│
-├── PL
-│   └── Controllers
-│
-├── Program.cs
-└── appsettings.json
-
 ECommerce.API
 │
 ├── DAL
@@ -97,12 +83,12 @@ ECommerce.API
 │
 ├── BLL
 │   ├── Services
-│   │   ├── AuthenticationService.cs
-│   │   ├── ProductService.cs
-│   │   ├── CartService.cs
-│   │   ├── OrderService.cs
-│   │   ├── GenericService.cs
-│   │   └── FileService.cs
+│   │   ├── AuthenticationService
+│   │   ├── ProductService
+│   │   ├── CartService
+│   │   ├── OrderService
+│   │   ├── GenericService
+│   │   └── FileService
 │
 ├── PL
 │   └── Controllers
