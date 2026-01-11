@@ -1,171 +1,205 @@
-# 🛒 E-Commerce API — ASP.NET Core (Clean Architecture)
 
-A clean, scalable 3-layer architecture (DAL → BLL → PL) built for modern e-commerce applications, featuring generic CRUD, JWT authentication, cart & order management, and product/media handling.
+# 🚀 Backend API
 
----
+**ASP.NET Core 9 | Clean Architecture | REST API**
 
-
-## 📌 Table of Contents
-- [🚀 Overview](#-overview)
-- [📐 Architecture](#-architecture)
-- [📁 Project-Structure](#-project-structure)
-- [🔑 Authentication Flow](#-authentication-flow)
-- [🧩 Key Features](#-key-features)
-- [🛠 Technologies](#-technologies)
-- [📦 How to Run](#-how-to-run)
-- [🗂 Services](#-services)
-- [📘 API Documentation](#-api-documentation)
-- [📞 Contact](#-contact)
-
+![.NET](https://img.shields.io/badge/.NET-9.0-blue)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
+## 📖 Table of Contents
 
-## 🚀 Overview
-
-The **E-Commerce API** provides a solid backend foundation for any online shopping platform.
-It includes:
-
-- Product, category & brand management
-- Cart & order system
-- Secure JWT authentication
-- Generic repository & service pattern
-- Media upload for product images
-- reviews, user profiles
-
-
-
----
-
-
-
-
-## 📐 Architecture
-
-
-### **1️⃣ DAL — Data Access Layer**
-- EF Core models
-- DTOs
-- DbContext  
-- Generic & specific repositories
-- Query filters & includes 
-
-
-### **2️⃣ BLL — Business Logic Layer**
-- AuthenticationService  
-- GenericService  
-- FileService  
-- UserProgressService  
-- CartService
-- ProductService
-- OrderService
-
-
-
-### **3️⃣ PL — Presentation Layer**
-- Controllers  
-- Routing  
-- Response models  
+* [Overview](#overview)
+* [Architecture](#architecture)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
+* [Environment Variables](#environment-variables)
+* [Authentication](#authentication)
+* [API Modules](#api-modules)
+* [Error Handling](#error-handling)
+* [API Documentation](#api-documentation)
+* [Deployment](#deployment)
+* [Versioning](#versioning)
+* [Contributing](#contributing)
+* [Support](#support)
+* [Contact](#contact)
+* [License](#license)
 
 ---
 
-## 📁 Project Structure
+## 📌 Overview
 
-```plaintext
+This repository contains a **production-ready backend API** built with **ASP.NET Core 9**, following **Clean Architecture**, **SOLID principles**, and industry best practices.
 
-ECommerce.API
-│
-├── DAL
-│   ├── Entities
-│   ├── DTOs
-│   ├── Repositories
-│   └── ApplicationDbContext.cs
-│
-├── BLL
-│   ├── Services
-│   │   ├── AuthenticationService
-│   │   ├── ProductService
-│   │   ├── CartService
-│   │   ├── OrderService
-│   │   ├── GenericService
-│   │   └── FileService
-│
-├── PL
-│   └── Controllers
-│
-├── Program.cs
-└── appsettings.json
+The API is designed to be consumed by:
+
+* Mobile applications
+* Web applications
+* Third-party services
+
+---
+
+## 🧱 Architecture
+
+This project follows a **3-Layer Architecture**:
+
+```
+PL  → Controllers / API
+BLL → Business Logic & Services
+DAL → Data Access (EF Core + Repositories)
 ```
 
+Each layer is **fully isolated** and communicates via **interfaces only**.
 
+---
 
-## 🔑 Authentication Flow
+## 🚀 Tech Stack
 
-Login → access token + refresh token
-Refresh token stored in DB
-Revoked tokens stored in-memory
-Token validation handled by middleware
-Supports roles: SuperAdmin / Admin / Customer
+* ASP.NET Core 9
+* Entity Framework Core
+* SQL Server
+* JWT Authentication
+* Dependency Injection
+* Swagger / OpenAPI
 
+---
 
-🧩 Key Features
+## ⚙️ Getting Started
 
-✨ Secure JWT authentication
-✨ Products, categories, brands CRUD
-✨ Shopping cart system
-✨ Place & track orders
-✨ product reviews
-✨ Upload files
-✨ Generic CRUD for entities
-✨ Clean, scalable 3-layer architecture
+### Prerequisites
 
+* .NET SDK 9.0
+* SQL Server
+* Visual Studio 2022+
 
+### Installation
 
-## 🛠 Technologies
-
-ASP.NET Core 9
-Entity Framework Core
-MS SQL Server
-AutoMapper
-Dependency Injection
-Swagger (OpenAPI)
-
-
-
-## 📦 How to Run
-1️⃣ Update Connection String
-"ConnectionStrings": {
-  "DefaultConnection": "your-connection"
-}
-
-2️⃣ Apply migrations
-update-database
-
-3️⃣ Run the API
+```bash
+git clone https://github.com/your-org/project-name.git
+cd project-name
+dotnet restore
+dotnet ef database update
 dotnet run
+```
 
-4️⃣ Open Swagger
-https://localhost:{port}/swagger/index.html
+---
 
+## 🔐 Environment Variables
 
+Configure the following in `appsettings.json` or environment variables:
 
+| Key                                   | Description         |
+| ------------------------------------- | ------------------- |
+| `ConnectionStrings:DefaultConnection` | Database connection |
+| `Jwt:Key`                             | JWT secret key      |
+| `Jwt:Issuer`                          | Token issuer        |
+| `Jwt:Audience`                        | Token audience      |
+| `Email:SmtpHost`                      | SMTP server         |
+| `Email:Username`                      | SMTP user           |
+| `Email:Password`                      | SMTP password       |
 
-## 🗂 Core Services
-AuthenticationService	Login, register, refresh tokens
-ProductService	Products, categories, brands
-CartService	Add/remove items, user carts
-OrderService	Checkout, orders, payments (logic level)
-FileService	Upload product images
-GenericService	Shared CRUD operations
+---
 
+## 🔐 Authentication
 
-## 📘 API Documentation
-[To see the api document of this project click here](./docs/Api_Document.md)
+Authentication is implemented using **JWT Bearer Tokens**.
 
+```
+Authorization: Bearer <token>
+```
 
+---
 
-## 📞 Contact
+## 📦 API Modules
 
-📧 mahmoudjawad02025@gmail.com
+* Users
+* Authentication
+* Quran / Content / Lessons *(domain-based)*
+* Quizzes
+* User Progress
 
-🔗 GitHub: [mahmoudjawad-2025](https://github.com/mahmoudjawad-2025/)
+---
+
+## ❌ Error Handling
+
+* Centralized exception handling
+* Standard HTTP status codes
+* Consistent response format
+
+```json
+{
+  "message": "Validation failed"
+}
+```
+
+---
+
+## 📑 API Documentation
+
+Swagger UI:
+
+```
+/swagger
+```
+
+---
+
+## 🚀 Deployment
+
+Supported deployment options:
+
+* IIS
+* Docker
+* Azure App Service
+* Linux (Kestrel + Nginx)
+
+---
+
+## 🏷 Versioning
+
+This project follows **Semantic Versioning**:
+
+```
+vMAJOR.MINOR.PATCH
+```
+
+Example:
+
+```
+v1.2.0
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Open Pull Request
+
+---
+
+## 🆘 Support
+
+If you encounter issues:
+
+* Open a **GitHub Issue**
+* Provide logs and steps to reproduce
+
+---
+
+## 📬 Contact
+
+**Project Maintainer:** Mahmoud Jawad
+**Email:** [your-email@example.com](mailto:your-email@example.com)
+**GitHub:** [https://github.com/mahmoudjawad-2025](https://github.com/mahmoudjawad-2025)
+
+---
+
+## 📄 License
+
+MIT License
+
