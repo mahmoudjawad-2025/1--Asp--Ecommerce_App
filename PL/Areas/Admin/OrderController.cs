@@ -8,7 +8,7 @@ namespace PL.Areas.Admin
 {
     [Route("api/[area]/[controller]")]
     [ApiController]
-    [Area("Admin")]
+    [Area("admin")]
     [Authorize(Roles = "admin,superAdmin")]
     public class OrdersController : ControllerBase
     {
