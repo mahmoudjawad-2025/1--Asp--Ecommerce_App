@@ -60,6 +60,21 @@
 <br>
 
 
+### 📋 Models Table of Contents
+
+| Category | Request Models (DTOs) | Response Models (DTOs) |
+| :--- | :--- | :--- |
+| **🛍 Product & Brand** | [ProductRequest](#productrequest), [BrandRequest](#brandrequest), [CategoryRequest](#categoryrequest) | [ProductResponse](#productresponse), [BrandResponse](#brandresponse), [CategoryResponse](#categoryresponse) |
+| **🛒 Cart & Checkout** | [CartRequest](#cartrequest), [CheckOutRequest](#checkoutrequest) | [CartResponse](#cartresponse), [CartSummaryResponse](#cartsummaryresponse), [CheckOutResponse](#checkoutresponse) |
+| **🔐 Auth & Identity** | [RegisterRequest](#registerrequest), [LoginRequest](#loginrequest), [ForgotPasswordRequest](#forgotpasswordrequest), [ResetPasswordRequest](#resetpasswordrequest) | [RegisterResponse](#registerresponse), [UserResponse](#userresponse) |
+| **👤 User & Roles** | [ChangeRoleRequest](#changerolerequest) | [UserDto](#userdto) |
+| **⭐ Reviews** | [ReviewRequest](#reviewrequest) | [ReviewResponse](#reviewresponse) |
+| **⚙️ System & Enums** | [IFormFile](#iformfile), [PaymentMethodEnum](#paymentmethodenum) | — |
+
+<br>
+<hr>
+<br>
+
 ### /api/customer/Cart
 
 #### POST
