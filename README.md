@@ -6,7 +6,7 @@ A clean, scalable 3-layer architecture (DAL → BLL → PL) built for modern e-c
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-<br>
+
 <hr>
 <br>
 
