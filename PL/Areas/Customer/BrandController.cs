@@ -7,7 +7,7 @@ namespace P_L.Areas.Customer
 {
     [Route("api/[area]/[controller]")]
     [ApiController]
-    [Area("Customer")]
+    [Area("customer")]
     [Authorize(Roles = "customer")]
     public class BrandsController : ControllerBase
     {
