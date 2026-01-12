@@ -8,7 +8,7 @@ namespace P_L.Areas.Controllers
 {
     [Route("api/[area]/[controller]")]
     [ApiController]
-    [Area("Customer")]
+    [Area("customer")]
     [Authorize(Roles = "customer")]
     public class CategoryController : ControllerBase
     {
