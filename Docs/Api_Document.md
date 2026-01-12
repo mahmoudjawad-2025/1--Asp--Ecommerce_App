@@ -21,10 +21,10 @@
 | [/api/customer/CheckOuts/Success/{orderId}](#apicustomercheckoutssuccessorderid) | `GET` | Verify successful order placement |
 | [/api/customer/Reviews](#apicustomerreviews) | `POST` | Submit product feedback and rating |
 | **🛍 Customer: Category & Brand Browsing** | | |
-| [/api/Customer/Category/GetAll](#apicustomercategorygetall) | `GET` | List all available categories |
-| [/api/Customer/Category/Get/{id}](#apicustomercategorygetid) | `GET` | Get category details |
-| [/api/Customer/Brands](#apicustomerbrands) | `GET` | List all available brands |
-| [/api/Customer/Brands/{id}](#apicustomerbrandsid) | `GET` | Get brand information |
+| [/api/customer/Category/GetAll](#apicustomercategorygetall) | `GET` | List all available categories |
+| [/api/customer/Category/Get/{id}](#apicustomercategorygetid) | `GET` | Get category details |
+| [/api/customer/Brands](#apicustomerbrands) | `GET` | List all available brands |
+| [/api/customer/Brands/{id}](#apicustomerbrandsid) | `GET` | Get brand information |
 | **📦 Admin: Order Management** | | |
 | [/api/admin/Orders/status/{status}](#apiadminordersstatusstatus) | `GET` | Filter and view all system orders |
 | [/api/admin/Orders/change-status/{orderId}](#apiadminorderschangestatusorderid) | `PATCH` | Update order fulfillment status |
@@ -43,17 +43,17 @@
 | [/api/admin/Category/ToggleStatus/{id}](#apiadmincategorytogglestatusid) | `PATCH` | Activate/Deactivate a category status |
 | [/api/admin/Category/Delete/{id}](#apiadmincategorydeleteid) | `DELETE` | Permanently remove a category |
 | **🏷 Admin: Brand Management** | | |
-| [/api/Admin/Brands](#apiadminbrands) | `GET` | List all store brands (Admin view) |
-| [/api/Admin/Brands](#apiadminbrands) | `POST` | Create a new brand |
-| [/api/Admin/Brands/{id}](#apiadminbrandsid) | `GET` | View specific brand details |
-| [/api/Admin/Brands/Update/{id}](#apiadminbrandsupdateid) | `PATCH` | Update brand name or details |
-| [/api/Admin/Brands/ToggleStatus/{id}](#apiadminbrandstogglestatusid) | `PATCH` | Enable/Disable brand visibility |
-| [/api/Admin/Brands/Delete/{id}](#apiadminbrandsdeleteid) | `DELETE` | Permanently remove a brand |
+| [/api/admin/Brands](#apiadminbrands) | `GET` | List all store brands (Admin view) |
+| [/api/admin/Brands](#apiadminbrands) | `POST` | Create a new brand |
+| [/api/admin/Brands/{id}](#apiadminbrandsid) | `GET` | View specific brand details |
+| [/api/admin/Brands/Update/{id}](#apiadminbrandsupdateid) | `PATCH` | Update brand name or details |
+| [/api/admin/Brands/ToggleStatus/{id}](#apiadminbrandstogglestatusid) | `PATCH` | Enable/Disable brand visibility |
+| [/api/admin/Brands/Delete/{id}](#apiadminbrandsdeleteid) | `DELETE` | Permanently remove a brand |
 | **✨ Admin: Product Management** | | |
 | [/api/admin/Product](#apiadminproduct) | `GET` | List products with Pagination (pageNumber, pageSize) |
 | [/api/admin/Product](#apiadminproduct) | `POST` | Upload and create a new product |
 | **📊 Admin: Reports** | | |
-| [/api/Admin/Reports](#apiadminreports) | `GET` | Generate sales and user activity reports |
+| [/api/admin/Reports](#apiadminreports) | `GET` | Generate sales and user activity reports |
 
 <br>
 <hr>
