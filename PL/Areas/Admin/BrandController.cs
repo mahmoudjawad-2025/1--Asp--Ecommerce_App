@@ -1,4 +1,4 @@
-﻿using B_L_L.Services.Classes;
+using B_L_L.Services.Classes;
 using B_L_L.Services.Interfaces;
 using D_A_L.DTO.Requests;
 using Microsoft.AspNetCore.Authorization;
@@ -31,12 +31,7 @@ namespace P_L.Areas.Admin
             return Ok(category);
         }
 
-        //[HttpPost("Create")]
-        //public IActionResult Create([FromBody] BrandRequest request)
-        //{
-        //    var id = _service.Create(request);
-        //    return CreatedAtAction(nameof(Get), new { id }, new { message = "Brand created" });
-        //}
+
         [HttpPost("")]
         public async Task<IActionResult> Create([FromForm] BrandRequest request)
         {
