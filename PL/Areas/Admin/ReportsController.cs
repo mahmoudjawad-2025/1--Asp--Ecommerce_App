@@ -1,4 +1,5 @@
-﻿using BLL.Services.Classes;
+using BLL.Services.Classes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 //using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace PL.Areas.Admin
     [Route("api/[area]/[controller]")]
     [ApiController]
     [Area("Admin")]
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class ReportsController : ControllerBase
     {
         private readonly ReportService _reportService;
