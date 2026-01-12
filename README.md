@@ -70,39 +70,30 @@ A clean, scalable 3-layer architecture (DAL → BLL → PL) built for modern e-c
 
 
 ## 🚀 Overview
-
-The **E-Commerce API** provides a solid backend foundation for any online shopping platform.
-It includes:
-
-- Product, category & brand management
-- Cart & order system
-- Secure JWT authentication
-- Generic repository & service pattern
-- Media upload for product images
-- reviews, user profiles
+The **E-Commerce API** provides a production-ready backend foundation for online retail. It manages everything from complex product catalogs with multi-image support to secure administrative control and customer shopping workflows.
 
 <br>
 
-🧩 Key Features
-
-* ✨ Secure JWT authentication
-* ✨ Products, categories, brands CRUD
-* ✨ Shopping cart system
-* ✨ Place & track orders
-* ✨ product reviews
-* ✨ Upload files
-* ✨ Generic CRUD for entities
-* ✨ Clean, scalable 3-layer architecture
+## 🧩 Key Features
+* 🔐 **Secure Identity:** JWT-based Auth with Role-Based Access Control (Customer/Admin/SuperAdmin).
+* 🛍️ **Catalog Management:** Advanced CRUD for Products, Categories, and Brands.
+* 🖼️ **Media Handling:** Multi-image uploads and management for products.
+* 🛒 **Shopping Workflow:** Fully functional Cart system and Checkout logic.
+* 📦 **Order Tracking:** Admin-facing order status management and reporting.
+* ⚡ **Performance:** Optimized with Generic Repository patterns and DTO mapping.
+* 📝 **Reviews:** Integrated customer feedback and rating system.'
 
 <br>
 
 ## 🚀 Tech Stack
-* ASP.NET Core 9
-* Entity Framework Core
-* SQL Server
-* JWT Authentication
-* Dependency Injection
 * Swagger / OpenAPI
+* **Framework:** ASP.NET Core 9 (Web API)
+* **ORM:** Entity Framework Core (Code First)
+* **Database:** SQL Server
+* **Security:** JWT Bearer Authentication
+* **Documentation:** Swagger / OpenAPI
+* **Architecture:** 3-Layer (Clean) Architecture
+* **Dependency Injection**
 
 <br>
 
