@@ -10,7 +10,7 @@ namespace PL.Areas.Admin
     [Route("api/[area]/[controller]")]
     [ApiController]
     [Area("Admin")]
-    [Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "admin,superAdmin")]
     public class ReportsController : ControllerBase
     {
         private readonly ReportService _reportService;
