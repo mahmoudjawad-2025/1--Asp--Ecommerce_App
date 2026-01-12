@@ -1,4 +1,4 @@
-﻿using BLL.Services.Interfaces;
+using BLL.Services.Interfaces;
 using DAL.Models.DAL.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +9,7 @@ namespace PL.Areas.Admin
     [Route("api/[controller]")]
     [ApiController]
     [Area("Admin")]
-    //[Authorize(Roles = "admin,superAdmin")]
+    [Authorize(Roles = "admin,superAdmin")]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
