@@ -628,11 +628,6 @@
 | comment | string |  | No |
 | rate | integer |  | No |
 
-#### UserResponse
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| token | string |  | No |
 
 
 <br>
