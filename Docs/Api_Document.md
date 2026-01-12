@@ -27,8 +27,7 @@
 | [/api/customer/Brands/{id}](#apicustomerbrandsid) | `GET` | Get brand information |
 | **📦 Admin: Order Management** | | |
 | [/api/admin/Orders/status/{status}](#apiadminordersstatusstatus) | `GET` | Filter and view all system orders |
-| [/api/admin/Orders/change-status/{orderId}](#apiadminorderschangestatusorderid) | `PATCH` | Update order fulfillment status |
-| [/api/admin/Orders/change-status/{orderId}](#apiadminorderschangestatusorderid) | `PATCH` | Update order fulfillment status |
+| [/api/admin/Orders/change-status/{orderId}](#apiadminorderschange-statusorderid) | `PATCH` | Update order fulfillment status |
 | **👤 Admin: User Management** | | |
 | [/api/customer/Users](#apicustomerusers) | `GET` | List all registered users |
 | [/api/customer/Users/{id}](#apicustomerusersid) | `GET` | View detailed user profile |
