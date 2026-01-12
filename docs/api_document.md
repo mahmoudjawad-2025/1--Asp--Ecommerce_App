@@ -1,542 +1,1314 @@
-# PL | v1
-## Version: 1.0.0
+---
+title: PL | v1 v1.0.0
+language_tabs:
+  - "false": "false"
+language_clients:
+  - "false": ""
+toc_footers: []
+includes: []
+search: false
+highlight_theme: darkula
+headingLevel: 2
 
-### /api/Customer/Cart
+---
 
-#### POST
-##### Responses
+<!-- Generator: Widdershins v4.0.1 -->
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h1 id="pl-v1">PL | v1 v1.0.0</h1>
 
-#### GET
-##### Responses
+> Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+Base URLs:
 
-### /api/customer/CheckOuts/payment
+* <a href="https://localhost:7050">https://localhost:7050</a>
 
-#### POST
-##### Responses
+* <a href="http://localhost:5160">http://localhost:5160</a>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h1 id="pl-v1-cart">Cart</h1>
 
-### /api/customer/CheckOuts/Success/{orderId}
+## post__api_Customer_Cart
 
-#### GET
-##### Parameters
+> Code samples
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| orderId | path |  | Yes | integer |
+`POST /api/Customer/Cart`
 
-##### Responses
+> Body parameter
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+```json
+{
+  "productId": 0
+}
+```
 
-### /api/customer/Reviews
+<h3 id="post__api_customer_cart-parameters">Parameters</h3>
 
-#### POST
-##### Responses
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[CartRequest](#schemacartrequest)|true|none|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h3 id="post__api_customer_cart-responses">Responses</h3>
 
-### /api/customer/Users
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-#### GET
-##### Responses
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+## get__api_Customer_Cart
 
-### /api/customer/Users/{id}
+> Code samples
 
-#### GET
-##### Parameters
+`GET /api/Customer/Cart`
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | string |
+<h3 id="get__api_customer_cart-responses">Responses</h3>
 
-##### Responses
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-### /api/customer/Users/block/{userId}
+<h1 id="pl-v1-checkouts">CheckOuts</h1>
 
-#### PATCH
-##### Parameters
+## post__api_customer_CheckOuts_payment
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| userId | path |  | Yes | string |
+> Code samples
 
-##### Responses
+`POST /api/customer/CheckOuts/payment`
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+> Body parameter
 
-### /api/customer/Users/unblock/{userId}
+```json
+{
+  "paymentMethod": "Cash"
+}
+```
 
-#### PATCH
-##### Parameters
+<h3 id="post__api_customer_checkouts_payment-parameters">Parameters</h3>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| userId | path |  | Yes | string |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[CheckOutRequest](#schemacheckoutrequest)|true|none|
 
-##### Responses
+<h3 id="post__api_customer_checkouts_payment-responses">Responses</h3>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-### /api/customer/Users/isblock/{userId}
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-#### PATCH
-##### Parameters
+## get__api_customer_CheckOuts_Success_{orderId}
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| userId | path |  | Yes | string |
+> Code samples
 
-##### Responses
+`GET /api/customer/CheckOuts/Success/{orderId}`
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h3 id="get__api_customer_checkouts_success_{orderid}-parameters">Parameters</h3>
 
-### /api/customer/Users/changeRole/{userId}
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|orderId|path|integer(int32)|true|none|
 
-#### PATCH
-##### Parameters
+<h3 id="get__api_customer_checkouts_success_{orderid}-responses">Responses</h3>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| userId | path |  | Yes | string |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-##### Responses
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h1 id="pl-v1-reviews">Reviews</h1>
 
-### /api/Orders/status/{status}
+## post__api_customer_Reviews
 
-#### GET
-##### Parameters
+> Code samples
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| status | path |  | Yes | integer |
+`POST /api/customer/Reviews`
 
-##### Responses
+> Body parameter
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+```json
+{
+  "productId": 0,
+  "comment": "string",
+  "rate": 0
+}
+```
 
-### /api/Orders/change-status/{orderId}
+<h3 id="post__api_customer_reviews-parameters">Parameters</h3>
 
-#### PATCH
-##### Parameters
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[ReviewRequest](#schemareviewrequest)|true|none|
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| orderId | path |  | Yes | integer |
+<h3 id="post__api_customer_reviews-responses">Responses</h3>
 
-##### Responses
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-### /api/Admin/Reports
+<h1 id="pl-v1-users">Users</h1>
 
-#### GET
-##### Responses
+## get__api_customer_Users
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+> Code samples
 
-### /api/Identity/Authentication/Register
+`GET /api/customer/Users`
 
-#### POST
-##### Responses
+<h3 id="get__api_customer_users-responses">Responses</h3>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-### /api/Identity/Authentication/Login
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-#### POST
-##### Responses
+## get__api_customer_Users_{id}
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+> Code samples
 
-### /api/Identity/Authentication/ConfirmEmail
+`GET /api/customer/Users/{id}`
 
-#### GET
-##### Parameters
+<h3 id="get__api_customer_users_{id}-parameters">Parameters</h3>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| token | query |  | No | string |
-| userId | query |  | No | string |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|string|true|none|
 
-##### Responses
+<h3 id="get__api_customer_users_{id}-responses">Responses</h3>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-### /api/Identity/Authentication/forgot-password
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-#### POST
-##### Responses
+## patch__api_customer_Users_block_{userId}
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+> Code samples
 
-### /api/Identity/Authentication/reset-password
+`PATCH /api/customer/Users/block/{userId}`
 
-#### POST
-##### Responses
+> Body parameter
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+```json
+0
+```
 
-### /api/Customer/Category/GetAll
+<h3 id="patch__api_customer_users_block_{userid}-parameters">Parameters</h3>
 
-#### GET
-##### Responses
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|string|true|none|
+|body|body|integer(int32)|true|none|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h3 id="patch__api_customer_users_block_{userid}-responses">Responses</h3>
 
-### /api/Customer/Category/Get/{id}
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-#### GET
-##### Parameters
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+## patch__api_customer_Users_unblock_{userId}
 
-##### Responses
+> Code samples
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+`PATCH /api/customer/Users/unblock/{userId}`
 
-### /api/Customer/Brands
+<h3 id="patch__api_customer_users_unblock_{userid}-parameters">Parameters</h3>
 
-#### GET
-##### Responses
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|string|true|none|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h3 id="patch__api_customer_users_unblock_{userid}-responses">Responses</h3>
 
-### /api/Customer/Brands/{id}
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-#### GET
-##### Parameters
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+## patch__api_customer_Users_isblock_{userId}
 
-##### Responses
+> Code samples
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+`PATCH /api/customer/Users/isblock/{userId}`
 
-### /api/Admin/Brands
+<h3 id="patch__api_customer_users_isblock_{userid}-parameters">Parameters</h3>
 
-#### GET
-##### Responses
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|string|true|none|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h3 id="patch__api_customer_users_isblock_{userid}-responses">Responses</h3>
 
-#### POST
-##### Responses
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-### /api/Admin/Brands/{id}
+## patch__api_customer_Users_changeRole_{userId}
 
-#### GET
-##### Parameters
+> Code samples
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+`PATCH /api/customer/Users/changeRole/{userId}`
 
-##### Responses
+> Body parameter
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+```json
+{
+  "roleName": "string"
+}
+```
 
-### /api/Admin/Brands/Update/{id}
+<h3 id="patch__api_customer_users_changerole_{userid}-parameters">Parameters</h3>
 
-#### PATCH
-##### Parameters
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|userId|path|string|true|none|
+|body|body|[ChangeRoleRequest](#schemachangerolerequest)|true|none|
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+<h3 id="patch__api_customer_users_changerole_{userid}-responses">Responses</h3>
 
-##### Responses
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-### /api/Admin/Brands/ToggleStatus/{id}
+<h1 id="pl-v1-orders">Orders</h1>
 
-#### PATCH
-##### Parameters
+## get__api_Orders_status_{status}
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+> Code samples
 
-##### Responses
+`GET /api/Orders/status/{status}`
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+<h3 id="get__api_orders_status_{status}-parameters">Parameters</h3>
 
-### /api/Admin/Brands/Delete/{id}
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|status|path|integer|true|none|
 
-#### DELETE
-##### Parameters
+<h3 id="get__api_orders_status_{status}-responses">Responses</h3>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-##### Responses
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+## patch__api_Orders_change-status_{orderId}
 
-### /api/Admin/Category/GetAll
+> Code samples
 
-#### GET
-##### Responses
+`PATCH /api/Orders/change-status/{orderId}`
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+> Body parameter
 
-### /api/Admin/Category/Get/{id}
+```json
+"string"
+```
 
-#### GET
-##### Parameters
+<h3 id="patch__api_orders_change-status_{orderid}-parameters">Parameters</h3>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|orderId|path|integer(int32)|true|none|
+|body|body|string|true|none|
 
-##### Responses
+<h3 id="patch__api_orders_change-status_{orderid}-responses">Responses</h3>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-### /api/Admin/Category/Create
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-#### POST
-##### Responses
+<h1 id="pl-v1-reports">Reports</h1>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+## GeneratePdf
 
-### /api/Admin/Category/Update/{id}
+<a id="opIdGeneratePdf"></a>
 
-#### PATCH
-##### Parameters
+> Code samples
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+`GET /api/Admin/Reports`
 
-##### Responses
+<h3 id="generatepdf-responses">Responses</h3>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
-### /api/Admin/Category/ToggleStatus/{id}
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-#### PATCH
-##### Parameters
+<h1 id="pl-v1-authentication">Authentication</h1>
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+## post__api_Identity_Authentication_Register
 
-##### Responses
+> Code samples
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+`POST /api/Identity/Authentication/Register`
 
-### /api/Admin/Category/Delete/{id}
+> Body parameter
 
-#### DELETE
-##### Parameters
+```json
+{
+  "fullName": "string",
+  "userName": "string",
+  "email": "string",
+  "password": "string",
+  "phoneNumber": "string"
+}
+```
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
+<h3 id="post__api_identity_authentication_register-parameters">Parameters</h3>
 
-##### Responses
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[RegisterRequest](#schemaregisterrequest)|true|none|
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+> Example responses
 
-### /api/Admin/Product
+> 200 Response
 
-#### GET
-##### Parameters
+```
+{"token":"string"}
+```
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| pageNumber | query |  | No | integer |
-| pageSize | query |  | No | integer |
+```json
+{
+  "token": "string"
+}
+```
 
-##### Responses
+<h3 id="post__api_identity_authentication_register-responses">Responses</h3>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[UserResponse](#schemauserresponse)|
 
-#### POST
-##### Responses
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
+## post__api_Identity_Authentication_Login
 
-### Models
+> Code samples
 
+`POST /api/Identity/Authentication/Login`
 
-#### BrandRequest
+> Body parameter
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| name | string |  | No |
-| mainImage | [IFormFile](#iformfile) |  | No |
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+```
 
-#### CartRequest
+<h3 id="post__api_identity_authentication_login-parameters">Parameters</h3>
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| productId | integer |  | No |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[LoginRequest](#schemaloginrequest)|true|none|
 
-#### CategoryRequest
+> Example responses
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| name | string |  | No |
+> 200 Response
 
-#### ChangeRoleRequest
+```
+{"token":"string"}
+```
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| roleName | string |  | No |
+```json
+{
+  "token": "string"
+}
+```
 
-#### CheckOutRequest
+<h3 id="post__api_identity_authentication_login-responses">Responses</h3>
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| paymentMethod | [PaymentMethodEnum](#paymentmethodenum) |  | No |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[UserResponse](#schemauserresponse)|
 
-#### ForgotPasswordRequest
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| email | string |  | No |
+## get__api_Identity_Authentication_ConfirmEmail
 
-#### IFormFile
+> Code samples
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| IFormFile | string |  |  |
+`GET /api/Identity/Authentication/ConfirmEmail`
 
-#### LoginRequest
+<h3 id="get__api_identity_authentication_confirmemail-parameters">Parameters</h3>
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| email | string |  | No |
-| password | string |  | No |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|token|query|string|false|none|
+|userId|query|string|false|none|
 
-#### PaymentMethodEnum
+> Example responses
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| PaymentMethodEnum |  |  |  |
+> 200 Response
 
-#### RegisterRequest
+```
+"string"
+```
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| fullName | string |  | No |
-| userName | string |  | No |
-| email | string |  | No |
-| password | string |  | No |
-| phoneNumber | string |  | No |
+```json
+"string"
+```
 
-#### ResetPasswordRequest
+<h3 id="get__api_identity_authentication_confirmemail-responses">Responses</h3>
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| newPassword | string |  | No |
-| email | string |  | No |
-| code | string |  | No |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|string|
 
-#### ReviewRequest
+<aside class="success">
+This operation does not require authentication
+</aside>
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| productId | integer |  | No |
-| comment | string |  | No |
-| rate | integer |  | No |
+## post__api_Identity_Authentication_forgot-password
 
-#### UserResponse
+> Code samples
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| token | string |  | No |
+`POST /api/Identity/Authentication/forgot-password`
+
+> Body parameter
+
+```json
+{
+  "email": "string"
+}
+```
+
+<h3 id="post__api_identity_authentication_forgot-password-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[ForgotPasswordRequest](#schemaforgotpasswordrequest)|true|none|
+
+> Example responses
+
+> 200 Response
+
+```
+"string"
+```
+
+```json
+"string"
+```
+
+<h3 id="post__api_identity_authentication_forgot-password-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|string|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__api_Identity_Authentication_reset-password
+
+> Code samples
+
+`POST /api/Identity/Authentication/reset-password`
+
+> Body parameter
+
+```json
+{
+  "newPassword": "string",
+  "email": "string",
+  "code": "string"
+}
+```
+
+<h3 id="post__api_identity_authentication_reset-password-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[ResetPasswordRequest](#schemaresetpasswordrequest)|true|none|
+
+> Example responses
+
+> 200 Response
+
+```
+"string"
+```
+
+```json
+"string"
+```
+
+<h3 id="post__api_identity_authentication_reset-password-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|string|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="pl-v1-category">Category</h1>
+
+## get__api_Customer_Category_GetAll
+
+> Code samples
+
+`GET /api/Customer/Category/GetAll`
+
+<h3 id="get__api_customer_category_getall-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Customer_Category_Get_{id}
+
+> Code samples
+
+`GET /api/Customer/Category/Get/{id}`
+
+<h3 id="get__api_customer_category_get_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="get__api_customer_category_get_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Admin_Category_GetAll
+
+> Code samples
+
+`GET /api/Admin/Category/GetAll`
+
+<h3 id="get__api_admin_category_getall-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Admin_Category_Get_{id}
+
+> Code samples
+
+`GET /api/Admin/Category/Get/{id}`
+
+<h3 id="get__api_admin_category_get_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="get__api_admin_category_get_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__api_Admin_Category_Create
+
+> Code samples
+
+`POST /api/Admin/Category/Create`
+
+> Body parameter
+
+```json
+{
+  "name": "string"
+}
+```
+
+<h3 id="post__api_admin_category_create-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[CategoryRequest](#schemacategoryrequest)|true|none|
+
+<h3 id="post__api_admin_category_create-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## patch__api_Admin_Category_Update_{id}
+
+> Code samples
+
+`PATCH /api/Admin/Category/Update/{id}`
+
+> Body parameter
+
+```json
+{
+  "name": "string"
+}
+```
+
+<h3 id="patch__api_admin_category_update_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+|body|body|[CategoryRequest](#schemacategoryrequest)|true|none|
+
+<h3 id="patch__api_admin_category_update_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## patch__api_Admin_Category_ToggleStatus_{id}
+
+> Code samples
+
+`PATCH /api/Admin/Category/ToggleStatus/{id}`
+
+<h3 id="patch__api_admin_category_togglestatus_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="patch__api_admin_category_togglestatus_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## delete__api_Admin_Category_Delete_{id}
+
+> Code samples
+
+`DELETE /api/Admin/Category/Delete/{id}`
+
+<h3 id="delete__api_admin_category_delete_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="delete__api_admin_category_delete_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="pl-v1-brands">Brands</h1>
+
+## get__api_Customer_Brands
+
+> Code samples
+
+`GET /api/Customer/Brands`
+
+<h3 id="get__api_customer_brands-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Customer_Brands_{id}
+
+> Code samples
+
+`GET /api/Customer/Brands/{id}`
+
+<h3 id="get__api_customer_brands_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="get__api_customer_brands_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Admin_Brands
+
+> Code samples
+
+`GET /api/Admin/Brands`
+
+<h3 id="get__api_admin_brands-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__api_Admin_Brands
+
+> Code samples
+
+`POST /api/Admin/Brands`
+
+> Body parameter
+
+```yaml
+name: string
+MainImage: string
+
+```
+
+<h3 id="post__api_admin_brands-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|object|true|none|
+|» name|body|string|false|none|
+|» MainImage|body|[IFormFile](#schemaiformfile)(binary)|false|none|
+
+<h3 id="post__api_admin_brands-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Admin_Brands_{id}
+
+> Code samples
+
+`GET /api/Admin/Brands/{id}`
+
+<h3 id="get__api_admin_brands_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="get__api_admin_brands_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## patch__api_Admin_Brands_Update_{id}
+
+> Code samples
+
+`PATCH /api/Admin/Brands/Update/{id}`
+
+> Body parameter
+
+```json
+{
+  "name": "string",
+  "mainImage": "string"
+}
+```
+
+<h3 id="patch__api_admin_brands_update_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+|body|body|[BrandRequest](#schemabrandrequest)|true|none|
+
+<h3 id="patch__api_admin_brands_update_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## patch__api_Admin_Brands_ToggleStatus_{id}
+
+> Code samples
+
+`PATCH /api/Admin/Brands/ToggleStatus/{id}`
+
+<h3 id="patch__api_admin_brands_togglestatus_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="patch__api_admin_brands_togglestatus_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## delete__api_Admin_Brands_Delete_{id}
+
+> Code samples
+
+`DELETE /api/Admin/Brands/Delete/{id}`
+
+<h3 id="delete__api_admin_brands_delete_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+<h3 id="delete__api_admin_brands_delete_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="pl-v1-product">Product</h1>
+
+## get__api_Admin_Product
+
+> Code samples
+
+`GET /api/Admin/Product`
+
+<h3 id="get__api_admin_product-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|pageNumber|query|integer(int32)|false|none|
+|pageSize|query|integer(int32)|false|none|
+
+<h3 id="get__api_admin_product-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__api_Admin_Product
+
+> Code samples
+
+`POST /api/Admin/Product`
+
+> Body parameter
+
+```yaml
+Name: string
+Description: string
+Price: 0.1
+Discount: 0.1
+Quantity: 0
+MainImage: string
+SubImages:
+  - string
+Rate: 0.1
+CategoryId: 0
+BrandId: 0
+
+```
+
+<h3 id="post__api_admin_product-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|object|true|none|
+|» Name|body|string|false|none|
+|» Description|body|string|false|none|
+|» Price|body|number(double)|false|none|
+|» Discount|body|number(double)|false|none|
+|» Quantity|body|integer(int32)|false|none|
+|» MainImage|body|[IFormFile](#schemaiformfile)(binary)|false|none|
+|» SubImages|body|[[IFormFile](#schemaiformfile)]|false|none|
+|» Rate|body|number(double)|false|none|
+|» CategoryId|body|integer(int32)|false|none|
+|» BrandId|body|integer(int32)|false|none|
+
+<h3 id="post__api_admin_product-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Schemas
+
+<h2 id="tocS_BrandRequest">BrandRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemabrandrequest"></a>
+<a id="schema_BrandRequest"></a>
+<a id="tocSbrandrequest"></a>
+<a id="tocsbrandrequest"></a>
+
+```json
+{
+  "name": "string",
+  "mainImage": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|name|string|false|none|none|
+|mainImage|[IFormFile](#schemaiformfile)|false|none|none|
+
+<h2 id="tocS_CartRequest">CartRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemacartrequest"></a>
+<a id="schema_CartRequest"></a>
+<a id="tocScartrequest"></a>
+<a id="tocscartrequest"></a>
+
+```json
+{
+  "productId": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|productId|integer(int32)|false|none|none|
+
+<h2 id="tocS_CategoryRequest">CategoryRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemacategoryrequest"></a>
+<a id="schema_CategoryRequest"></a>
+<a id="tocScategoryrequest"></a>
+<a id="tocscategoryrequest"></a>
+
+```json
+{
+  "name": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|name|string|false|none|none|
+
+<h2 id="tocS_ChangeRoleRequest">ChangeRoleRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemachangerolerequest"></a>
+<a id="schema_ChangeRoleRequest"></a>
+<a id="tocSchangerolerequest"></a>
+<a id="tocschangerolerequest"></a>
+
+```json
+{
+  "roleName": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|roleName|string|false|none|none|
+
+<h2 id="tocS_CheckOutRequest">CheckOutRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemacheckoutrequest"></a>
+<a id="schema_CheckOutRequest"></a>
+<a id="tocScheckoutrequest"></a>
+<a id="tocscheckoutrequest"></a>
+
+```json
+{
+  "paymentMethod": "Cash"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|paymentMethod|[PaymentMethodEnum](#schemapaymentmethodenum)|false|none|none|
+
+<h2 id="tocS_ForgotPasswordRequest">ForgotPasswordRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemaforgotpasswordrequest"></a>
+<a id="schema_ForgotPasswordRequest"></a>
+<a id="tocSforgotpasswordrequest"></a>
+<a id="tocsforgotpasswordrequest"></a>
+
+```json
+{
+  "email": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|email|string|false|none|none|
+
+<h2 id="tocS_IFormFile">IFormFile</h2>
+<!-- backwards compatibility -->
+<a id="schemaiformfile"></a>
+<a id="schema_IFormFile"></a>
+<a id="tocSiformfile"></a>
+<a id="tocsiformfile"></a>
+
+```json
+"string"
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|*anonymous*|string(binary)|false|none|none|
+
+<h2 id="tocS_LoginRequest">LoginRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemaloginrequest"></a>
+<a id="schema_LoginRequest"></a>
+<a id="tocSloginrequest"></a>
+<a id="tocsloginrequest"></a>
+
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|email|string|false|none|none|
+|password|string|false|none|none|
+
+<h2 id="tocS_PaymentMethodEnum">PaymentMethodEnum</h2>
+<!-- backwards compatibility -->
+<a id="schemapaymentmethodenum"></a>
+<a id="schema_PaymentMethodEnum"></a>
+<a id="tocSpaymentmethodenum"></a>
+<a id="tocspaymentmethodenum"></a>
+
+```json
+"Cash"
+
+```
+
+### Properties
+
+*None*
+
+<h2 id="tocS_RegisterRequest">RegisterRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemaregisterrequest"></a>
+<a id="schema_RegisterRequest"></a>
+<a id="tocSregisterrequest"></a>
+<a id="tocsregisterrequest"></a>
+
+```json
+{
+  "fullName": "string",
+  "userName": "string",
+  "email": "string",
+  "password": "string",
+  "phoneNumber": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|fullName|string|false|none|none|
+|userName|string|false|none|none|
+|email|string|false|none|none|
+|password|string|false|none|none|
+|phoneNumber|string|false|none|none|
+
+<h2 id="tocS_ResetPasswordRequest">ResetPasswordRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemaresetpasswordrequest"></a>
+<a id="schema_ResetPasswordRequest"></a>
+<a id="tocSresetpasswordrequest"></a>
+<a id="tocsresetpasswordrequest"></a>
+
+```json
+{
+  "newPassword": "string",
+  "email": "string",
+  "code": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|newPassword|string|false|none|none|
+|email|string|false|none|none|
+|code|string|false|none|none|
+
+<h2 id="tocS_ReviewRequest">ReviewRequest</h2>
+<!-- backwards compatibility -->
+<a id="schemareviewrequest"></a>
+<a id="schema_ReviewRequest"></a>
+<a id="tocSreviewrequest"></a>
+<a id="tocsreviewrequest"></a>
+
+```json
+{
+  "productId": 0,
+  "comment": "string",
+  "rate": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|productId|integer(int32)|false|none|none|
+|comment|string¦null|false|none|none|
+|rate|integer(int32)|false|none|none|
+
+<h2 id="tocS_UserResponse">UserResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemauserresponse"></a>
+<a id="schema_UserResponse"></a>
+<a id="tocSuserresponse"></a>
+<a id="tocsuserresponse"></a>
+
+```json
+{
+  "token": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|token|string|false|none|none|
+
