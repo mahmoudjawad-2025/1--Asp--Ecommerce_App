@@ -509,7 +509,26 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### Models
+
+<br>
+<hr>
+<br>
+
+### 📦 Request Models (DTOs)
+
+#### ProductRequest
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| Name | string | | Yes |
+| Description | string | | Yes |
+| Price | decimal | | Yes |
+| Discount | decimal | | No |
+| Quantity | integer | | Yes |
+| MainImage | [IFormFile](#iformfile) | | Yes |
+| SubImages | [ [IFormFile](#iformfile) ] | | No |
+| Rate | double | | No |
+| CategoryId | integer | | Yes |
+| BrandId | integer | | No |
 
 
 #### BrandRequest
@@ -599,3 +618,86 @@
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | token | string |  | No |
+
+
+<br>
+<hr>
+<br>
+
+
+### 📤 Response Models (DTOs)
+
+#### BrandResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | |
+| MainImageUrl | string | |
+
+#### CartResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ProductId | integer | |
+| ProductName | string | |
+| Count | integer | |
+| Price | decimal | |
+| TotalPrice | decimal | |
+
+#### CartSummaryResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Items | [ [CartResponse](#cartresponse) ] | |
+| CartTotal | decimal | |
+
+#### CategoryResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | integer | |
+| name | string | |
+| status | [Status](#status) | |
+
+#### CheckOutResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Success | boolean | |
+| Message | string | |
+| Url | string | |
+| PaymentId | string | |
+
+#### ProductResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Name | string | |
+| Description | string | |
+| Quantity | integer | |
+| MainImageUrl | string | |
+| SubImagesUrls | [ string ] | |
+| Reviews | [ [ReviewResponse](#reviewresponse) ] | |
+
+#### RegisterResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| email | string | |
+
+#### ReviewResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Id | integer | |
+| Rate | integer | |
+| Comment | string | |
+| FullName | string | |
+
+#### UserDto
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Id | string | |
+| FullName | string | |
+| UserName | string | |
+| Email | string | |
+| PhoneNumber | string | |
+| EmailConfirmed | boolean | |
+| RoleName | string | |
+
+#### UserResponse
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| token | string | |
