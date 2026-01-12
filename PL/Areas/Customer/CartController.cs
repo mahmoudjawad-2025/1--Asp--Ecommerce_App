@@ -9,7 +9,7 @@ namespace PL.Areas.Customer
 {
     [Route("api/[area]/[controller]")]
     [ApiController]
-    [Area("Customer")]
+    [Area("customer")]
     [Authorize(Roles = "customer")]
     public class CartController : ControllerBase
     {
