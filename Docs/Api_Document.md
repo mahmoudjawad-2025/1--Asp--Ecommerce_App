@@ -1,6 +1,57 @@
 # PL | v1
 ## Version: 1.0.0
 
+<br>
+
+## 🛰 API Endpoints Reference
+
+| Path | Method | Summary |
+| :--- | :--- | :--- |
+| **Authentication & Identity** | | |
+| [/api/Identity/Authentication/Register](#apiidentityauthenticationregister) | `POST` | Register a new user |
+| [/api/Identity/Authentication/Login](#apiidentityauthenticationlogin) | `POST` | Authenticate and get token |
+| [/api/Identity/Authentication/ConfirmEmail](#apiidentityauthenticationconfirmemail) | `GET` | Verify user email address |
+| [/api/Identity/Authentication/forgot-password](#apiidentityauthenticationforgot-password) | `POST` | Request password reset |
+| [/api/Identity/Authentication/reset-password](#apiidentityauthenticationreset-password) | `POST` | Reset password with token |
+| **Shopping Cart** | | |
+| [/api/Customer/Cart](#apicustomercart) | `POST` | Add/Update items in cart |
+| [/api/Customer/Cart](#apicustomercart) | `GET` | Retrieve customer cart |
+| **Checkout & Payments** | | |
+| [/api/customer/CheckOuts/payment](#apicustomercheckoutspayment) | `POST` | Process order payment |
+| [/api/customer/CheckOuts/Success/{orderId}](#apicustomercheckoutssuccessorderid) | `GET` | Handle successful payment callback |
+| **Order Management** | | |
+| [/api/Orders/status/{status}](#apiordersstatusstatus) | `GET` | Filter orders by status |
+| [/api/Orders/change-status/{orderId}](#apiorderschangestatusorderid) | `PATCH` | Update order progress status |
+| **Customer User Management** | | |
+| [/api/customer/Users](#apicustomerusers) | `GET` | List all users (Admin) |
+| [/api/customer/Users/{id}](#apicustomerusersid) | `GET` | Get user details by ID |
+| [/api/customer/Users/block/{userId}](#apicustomerusersblockuserid) | `PATCH` | Block a user account |
+| [/api/customer/Users/unblock/{userId}](#apicustomerusersunblockuserid) | `PATCH` | Unblock a user account |
+| [/api/customer/Users/isblock/{userId}](#apicustomerusersisblockuserid) | `PATCH` | Check if user is blocked |
+| [/api/customer/Users/changeRole/{userId}](#apicustomeruserschangeroleuserid) | `PATCH` | Update user permissions/roles |
+| **Categories & Catalog** | | |
+| [/api/Customer/Category/GetAll](#apicustomercategorygetall) | `GET` | List all active categories |
+| [/api/Customer/Category/Get/{id}](#apicustomercategorygetid) | `GET` | Get category details by ID |
+| **Brand Management (Customer)** | | |
+| [/api/Customer/Brands](#apicustomerbrands) | `GET` | List all available brands |
+| [/api/Customer/Brands/{id}](#apicustomerbrandsid) | `GET` | Get brand details |
+| **Brand Management (Admin)** | | |
+| [/api/Admin/Brands](#apiadminbrands) | `GET` | List all brands (incl. inactive) |
+| [/api/Admin/Brands](#apiadminbrands) | `POST` | Create a new brand |
+| [/api/Admin/Brands/{id}](#apiadminbrandsid) | `GET` | Get brand details (Admin view) |
+| [/api/Admin/Brands/Update/{id}](#apiadminbrandsupdateid) | `PATCH` | Modify brand information |
+| [/api/Admin/Brands/ToggleStatus/{id}](#apiadminbrandstogglestatusid) | `PATCH` | Activate/Deactivate a brand |
+| [/api/Admin/Brands/Delete/{id}](#apiadminbrandsdeleteid) | `DELETE` | Permanently remove a brand |
+| **Reviews & Analytics** | | |
+| [/api/customer/Reviews](#apicustomerreviews) | `POST` | Submit a product review |
+| [/api/Admin/Reports](#apiadminreports) | `GET` | Generate platform sales reports |
+
+
+<br>
+<hr>
+<br>
+
+
 ### /api/Customer/Cart
 
 #### POST
