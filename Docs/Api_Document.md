@@ -49,9 +49,6 @@
 | [/api/Admin/Brands/Delete/{id}](#apiadminbrandsdeleteid) | `DELETE` | Permanently remove a brand |
 | **✨ Admin: Product Management** | | |
 | [/api/Admin/Product/Create](#apiadminproductcreate) | `POST` | Add a new product to inventory |
-| [/api/Admin/Product/Update/{id}](#apiadminproductupdateid) | `PATCH` | Edit product pricing or info |
-| [/api/Admin/Product/ToggleStatus/{id}](#apiadminproducttogglestatusid) | `PATCH` | Toggle product stock visibility |
-| [/api/Admin/Product/Delete/{id}](#apiadminproductdeleteid) | `DELETE` | Remove product from listing |
 | **📊 Admin: Reports** | | |
 | [/api/Admin/Reports](#apiadminreports) | `GET` | Generate sales and user activity reports |
 
