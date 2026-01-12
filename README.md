@@ -2,23 +2,71 @@
 
 A clean, scalable 3-layer architecture (DAL → BLL → PL) built for modern e-commerce applications, featuring generic CRUD, JWT authentication, cart & order management, and product/media handling.
 
----
+![.NET](https://img.shields.io/badge/.NET-9.0-blue)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-green)
 
+<br>
+<hr>
+<br>
 
 ## 📌 Table of Contents
 - [🚀 Overview](#-overview)
 - [📐 Architecture](#-architecture)
-- [📁 Project-Structure](#-project-structure)
-- [🔑 Authentication Flow](#-authentication-flow)
 - [🧩 Key Features](#-key-features)
-- [🛠 Technologies](#-technologies)
-- [📦 How to Run](#-how-to-run)
-- [🗂 Services](#-services)
+- [🚀 Tech Stack](#-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [🔑 Authentication Flow](#-authentication-flow)
+- [📦 API Modules](#-api-modules)
+- [❌ Error Handling](#-error-handling)
+- [⚙️ Getting Started](#-getting-started)
+- [🔐 Environment Variables](#-environment-variables)
 - [📘 API Documentation](#-api-documentation)
 - [📞 Contact](#-contact)
 
 
----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<hr>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 🚀 Overview
@@ -33,136 +81,276 @@ It includes:
 - Media upload for product images
 - reviews, user profiles
 
+<br>
 
+🧩 Key Features
 
----
+* ✨ Secure JWT authentication
+* ✨ Products, categories, brands CRUD
+* ✨ Shopping cart system
+* ✨ Place & track orders
+* ✨ product reviews
+* ✨ Upload files
+* ✨ Generic CRUD for entities
+* ✨ Clean, scalable 3-layer architecture
 
+<br>
 
+## 🚀 Tech Stack
+* ASP.NET Core 9
+* Entity Framework Core
+* SQL Server
+* JWT Authentication
+* Dependency Injection
+* Swagger / OpenAPI
 
+<br>
 
 ## 📐 Architecture
+This project follows a **3-Layer Architecture**:
+```
+PL  → Controllers / API
+BLL → Business Logic & Services
+DAL → Data Access (EF Core + Repositories)
+```
+Each layer is **fully isolated** and communicates via **interfaces only**.
 
-
-### **1️⃣ DAL — Data Access Layer**
-- EF Core models
-- DTOs
-- DbContext  
-- Generic & specific repositories
-- Query filters & includes 
-
-
-### **2️⃣ BLL — Business Logic Layer**
-- AuthenticationService  
-- GenericService  
-- FileService  
-- UserProgressService  
-- CartService
-- ProductService
-- OrderService
-
-
-
-### **3️⃣ PL — Presentation Layer**
-- Controllers  
-- Routing  
-- Response models  
-
----
+<br>
 
 ## 📁 Project Structure
-
 ```plaintext
-
-ECommerce.API
+Nibras.API
 │
 ├── DAL
-│   ├── Entities
-│   ├── DTOs
-│   ├── Repositories
-│   └── ApplicationDbContext.cs
+│   ├── Data_Base
+│   │   ├── Migrations
+│   │   ├── ApplicationDbContext.cs
+|   ├── DTO
+│   ├── Models
+│   ├── Utils
+│   └── Repositories
+│       ├── Interfaces
+│       └── Classes
 │
 ├── BLL
-│   ├── Services
-│   │   ├── AuthenticationService
-│   │   ├── ProductService
-│   │   ├── CartService
-│   │   ├── OrderService
-│   │   ├── GenericService
-│   │   └── FileService
+│   └── Services
+│       ├── Interfaces
+│       └── Classes
 │
-├── PL
-│   └── Controllers
-│
-├── Program.cs
-└── appsettings.json
+└── PL
+    ├── Areas (Controllers)
+    │   ├── Admin
+    │   ├── Identity
+    |   └── Customer
+    ├── Utils
+    ├── appsettings.json
+    └── Program.cs
+
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<hr>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 ## 🔑 Authentication Flow
 
-Login → access token + refresh token
-Refresh token stored in DB
-Revoked tokens stored in-memory
-Token validation handled by middleware
-Supports roles: SuperAdmin / Admin / Customer
+Authentication is implemented using **JWT Bearer Tokens**.
 
+```
+Authorization: Bearer <token>
+```
 
-🧩 Key Features
+Login → JWT access token  
+Token validation handled via JWT Bearer middleware  
 
-✨ Secure JWT authentication
-✨ Products, categories, brands CRUD
-✨ Shopping cart system
-✨ Place & track orders
-✨ product reviews
-✨ Upload files
-✨ Generic CRUD for entities
-✨ Clean, scalable 3-layer architecture
+<br>
 
+## 📦 API Modules
 
+* **Authentication & Identity:** User registration, login, and secure password management.
+* **Admin - Product Management:** Inventory control, creation, and stock visibility status.
+* **Admin - Category Management:** Organization of product hierarchies and status toggles.
+* **Admin - Brand Management:** Partner brand profiles and visibility control.
+* **Admin - Order Management:** Fulfillment tracking and order status updates.
+* **Admin - Reports:** Sales analytics and user activity data.
+* **Customer - Shopping Experience:** Cart management, product browsing, and category viewing.
+* **Customer - Checkout:** Payment processing and order success verification.
+* **Customer - Reviews:** Product ratings and review submissions.
+* **User Management:** Administrative control over user roles and account access (Block/Unblock).
 
-## 🛠 Technologies
+<br>
 
-ASP.NET Core 9
-Entity Framework Core
-MS SQL Server
-AutoMapper
-Dependency Injection
-Swagger (OpenAPI)
+## ❌ Error Handling
 
+* Centralized exception handling
+* Standard HTTP status codes
+* Consistent response format
 
-
-## 📦 How to Run
-1️⃣ Update Connection String
-"ConnectionStrings": {
-  "DefaultConnection": "your-connection"
+```json
+{
+  "message": "Validation failed"
 }
+```
 
-2️⃣ Apply migrations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<hr>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- .NET SDK 9.0
+- SQL Server
+- Visual Studio 2022+
+
+### Installation
+git clone ...
+dotnet restore
+
+### Database Setup
 update-database
 
-3️⃣ Run the API
+### Run Application
 dotnet run
 
-4️⃣ Open Swagger
-https://localhost:{port}/swagger/index.html
+### API Access
+https://localhost:{port}/swagger
+
+<br>
+
+## 🔐 Environment Variables
+
+Configure the following in `appsettings.json` or environment variables:
+
+| Key                                   | Description                  |
+|--------------------------------------|------------------------------|
+| ConnectionStrings:DefaultConnection  | SQL Server connection string |
+| jwtOptions:SecretKey                 | JWT signing secret key       |
 
 
 
 
-## 🗂 Core Services
-AuthenticationService	Login, register, refresh tokens
-ProductService	Products, categories, brands
-CartService	Add/remove items, user carts
-OrderService	Checkout, orders, payments (logic level)
-FileService	Upload product images
-GenericService	Shared CRUD operations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<hr>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 📘 API Documentation
-[To see the api document of this project click here](./docs/Api_Document.md)
+[To see the api document of this project click here](./Docs/Api_Document.md)
 
-
+<br>
 
 ## 📞 Contact
 
