@@ -1,4 +1,4 @@
-﻿using B_L_L.Services.Interfaces;
+using B_L_L.Services.Interfaces;
 using D_A_L.DTO.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +9,7 @@ namespace P_L.Areas.Admin
     [Route("api/[area]/[controller]")]
     [ApiController]
     [Area("Admin")]
-    //[Authorize(Roles = "admin, superAdmin")]
+    [Authorize(Roles = "admin, superAdmin")]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
