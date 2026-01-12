@@ -7,52 +7,56 @@
 
 | Path | Method | Summary |
 | :--- | :--- | :--- |
-| **Authentication & Identity** | | |
-| [/api/Identity/Authentication/Register](#apiidentityauthenticationregister) | `POST` | Register a new user |
-| [/api/Identity/Authentication/Login](#apiidentityauthenticationlogin) | `POST` | Authenticate and get token |
-| [/api/Identity/Authentication/ConfirmEmail](#apiidentityauthenticationconfirmemail) | `GET` | Verify user email address |
-| [/api/Identity/Authentication/forgot-password](#apiidentityauthenticationforgot-password) | `POST` | Request password reset |
-| [/api/Identity/Authentication/reset-password](#apiidentityauthenticationreset-password) | `POST` | Reset password with token |
-| **Shopping Cart** | | |
-| [/api/Customer/Cart](#apicustomercart) | `POST` | Add/Update items in cart |
-| [/api/Customer/Cart](#apicustomercart) | `GET` | Retrieve customer cart |
-| **Checkout & Payments** | | |
-| [/api/customer/CheckOuts/payment](#apicustomercheckoutspayment) | `POST` | Process order payment |
-| [/api/customer/CheckOuts/Success/{orderId}](#apicustomercheckoutssuccessorderid) | `GET` | Handle successful payment callback |
-| **Order Management** | | |
-| [/api/Orders/status/{status}](#apiordersstatusstatus) | `GET` | Filter orders by status |
-| [/api/Orders/change-status/{orderId}](#apiorderschangestatusorderid) | `PATCH` | Update order progress status |
-| **Customer User Management** | | |
-| [/api/customer/Users](#apicustomerusers) | `GET` | List all users (Admin) |
-| [/api/customer/Users/{id}](#apicustomerusersid) | `GET` | Get user details by ID |
-| [/api/customer/Users/block/{userId}](#apicustomerusersblockuserid) | `PATCH` | Block a user account |
-| [/api/customer/Users/unblock/{userId}](#apicustomerusersunblockuserid) | `PATCH` | Unblock a user account |
-| [/api/customer/Users/isblock/{userId}](#apicustomerusersisblockuserid) | `PATCH` | Check if user is blocked |
-| [/api/customer/Users/changeRole/{userId}](#apicustomeruserschangeroleuserid) | `PATCH` | Update user permissions/roles |
-| **Categories & Catalog** | | |
-| [/api/Customer/Category/GetAll](#apicustomercategorygetall) | `GET` | List all active categories |
-| [/api/Customer/Category/Get/{id}](#apicustomercategorygetid) | `GET` | Get category details by ID |
-| **Brand Management (Customer)** | | |
-| [/api/Customer/Brands](#apicustomerbrands) | `GET` | List all available brands |
-| [/api/Customer/Brands/{id}](#apicustomerbrandsid) | `GET` | Get brand details |
-| **Brand Management (Admin)** | | |
-| [/api/Admin/Brands](#apiadminbrands) | `GET` | List all brands (incl. inactive) |
+| **🔐 Authentication & Identity** | | |
+| [/api/Identity/Authentication/Register](#apiidentityauthenticationregister) | `POST` | Create a new customer account |
+| [/api/Identity/Authentication/Login](#apiidentityauthenticationlogin) | `POST` | User login and JWT acquisition |
+| [/api/Identity/Authentication/ConfirmEmail](#apiidentityauthenticationconfirmemail) | `GET` | Confirm email via verification token |
+| [/api/Identity/Authentication/forgot-password](#apiidentityauthenticationforgot-password) | `POST` | Initiate password recovery |
+| [/api/Identity/Authentication/reset-password](#apiidentityauthenticationreset-password) | `POST` | Reset password using recovery code |
+| **🛒 Customer: Shopping Cart** | | |
+| [/api/customer/Cart](#apicustomercart) | `POST` | Update items in the cart |
+| [/api/customer/Cart](#apicustomercart) | `GET` | Retrieve current cart items |
+| **💳 Customer: Checkout & Reviews** | | |
+| [/api/customer/CheckOuts/payment](#apicustomercheckoutspayment) | `POST` | Process checkout and payment |
+| [/api/customer/CheckOuts/Success/{orderId}](#apicustomercheckoutssuccessorderid) | `GET` | Verify successful order placement |
+| [/api/customer/Reviews](#apicustomerreviews) | `POST` | Submit product feedback and rating |
+| **📦 Admin: Order Management** | | |
+| [/api/admin/Orders/status/{status}](#apiadminordersstatusstatus) | `GET` | Filter and view all system orders |
+| [/api/admin/Orders/change-status/{orderId}](#apiadminorderschangestatusorderid) | `PATCH` | Update order fulfillment status |
+| **👤 Admin: User Management** | | |
+| [/api/customer/Users](#apicustomerusers) | `GET` | List all registered users |
+| [/api/customer/Users/{id}](#apicustomerusersid) | `GET` | View detailed user profile |
+| [/api/customer/Users/block/{userId}](#apicustomerusersblockuserid) | `PATCH` | Restrict user access (Block) |
+| [/api/customer/Users/unblock/{userId}](#apicustomerusersunblockuserid) | `PATCH` | Restore user access (Unblock) |
+| [/api/customer/Users/isblock/{userId}](#apicustomerusersisblockuserid) | `PATCH` | Verify user restriction status |
+| [/api/customer/Users/changeRole/{userId}](#apicustomeruserschangeroleuserid) | `PATCH` | Manage user permissions/roles |
+| **📂 Admin: Category Management** | | |
+| [/api/Admin/Category/GetAll](#apiadmincategorygetall) | `GET` | List all available categories |
+| [/api/Admin/Category/Get/{id}](#apiadmincategorygetid) | `GET` | Get category details |
+| [/api/Admin/Category/Create](#apiadmincategorycreate) | `POST` | Add a new product category |
+| [/api/Admin/Category/Update/{id}](#apiadmincategoryupdateid) | `PATCH` | Edit category information |
+| [/api/Admin/Category/Delete/{id}](#apiadmincategorydeleteid) | `DELETE` | Remove a category from the store |
+| **🏷 Admin: Brand Management** | | |
+| [/api/Admin/Brands](#apiadminbrands) | `GET` | List all store brands |
 | [/api/Admin/Brands](#apiadminbrands) | `POST` | Create a new brand |
-| [/api/Admin/Brands/{id}](#apiadminbrandsid) | `GET` | Get brand details (Admin view) |
-| [/api/Admin/Brands/Update/{id}](#apiadminbrandsupdateid) | `PATCH` | Modify brand information |
-| [/api/Admin/Brands/ToggleStatus/{id}](#apiadminbrandstogglestatusid) | `PATCH` | Activate/Deactivate a brand |
+| [/api/Admin/Brands/{id}](#apiadminbrandsid) | `GET` | View specific brand details |
+| [/api/Admin/Brands/Update/{id}](#apiadminbrandsupdateid) | `PATCH` | Update brand name or details |
+| [/api/Admin/Brands/ToggleStatus/{id}](#apiadminbrandstogglestatusid) | `PATCH` | Enable/Disable brand visibility |
 | [/api/Admin/Brands/Delete/{id}](#apiadminbrandsdeleteid) | `DELETE` | Permanently remove a brand |
-| **Reviews & Analytics** | | |
-| [/api/customer/Reviews](#apicustomerreviews) | `POST` | Submit a product review |
-| [/api/Admin/Reports](#apiadminreports) | `GET` | Generate platform sales reports |
-
+| **🛍 Admin: Product Management** | | |
+| [/api/Admin/Product/Create](#apiadminproductcreate) | `POST` | Add a new product to inventory |
+| [/api/Admin/Product/Update/{id}](#apiadminproductupdateid) | `PATCH` | Edit product pricing or info |
+| [/api/Admin/Product/Delete/{id}](#apiadminproductdeleteid) | `DELETE` | Remove product from listing |
+| [/api/Admin/Product/ToggleStatus/{id}](#apiadminproducttogglestatusid) | `PATCH` | Toggle product stock visibility |
+| **📊 Admin: System & Reports** | | |
+| [/api/Admin/Reports](#apiadminreports) | `GET` | Generate sales and user reports |
 
 <br>
 <hr>
 <br>
 
 
-### /api/Customer/Cart
+### /api/customer/Cart
 
 #### POST
 ##### Responses
@@ -101,7 +105,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Orders/status/{status}
+### /api/admin/Orders/status/{status}
 
 #### GET
 ##### Parameters
@@ -116,7 +120,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Orders/change-status/{orderId}
+### /api/admin/Orders/change-status/{orderId}
 
 #### PATCH
 ##### Parameters
@@ -131,7 +135,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Reports
+### /api/admin/Reports
 
 #### GET
 ##### Responses
@@ -140,7 +144,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Users
+### /api/admin/Users
 
 #### GET
 ##### Responses
@@ -149,7 +153,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Users/{id}
+### /api/admin/Users/{id}
 
 #### GET
 ##### Parameters
@@ -164,7 +168,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Users/block/{userId}
+### /api/admin/Users/block/{userId}
 
 #### PATCH
 ##### Parameters
@@ -179,7 +183,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Users/unblock/{userId}
+### /api/admin/Users/unblock/{userId}
 
 #### PATCH
 ##### Parameters
@@ -194,7 +198,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Users/isblock/{userId}
+### /api/admin/Users/isblock/{userId}
 
 #### PATCH
 ##### Parameters
@@ -209,7 +213,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Users/changeRole/{userId}
+### /api/admin/Users/changeRole/{userId}
 
 #### PATCH
 ##### Parameters
@@ -276,7 +280,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Customer/Category/GetAll
+### /api/customer/Category/GetAll
 
 #### GET
 ##### Responses
@@ -285,31 +289,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Customer/Category/Get/{id}
-
-#### GET
-##### Parameters
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path |  | Yes | integer |
-
-##### Responses
-
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
-
-### /api/Customer/Brands
-
-#### GET
-##### Responses
-
-| Code | Description |
-| ---- | ----------- |
-| 200 | OK |
-
-### /api/Customer/Brands/{id}
+### /api/customer/Category/Get/{id}
 
 #### GET
 ##### Parameters
@@ -324,7 +304,31 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Brands
+### /api/customer/Brands
+
+#### GET
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
+
+### /api/customer/Brands/{id}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
+
+### /api/admin/Brands
 
 #### GET
 ##### Responses
@@ -340,7 +344,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Brands/{id}
+### /api/admin/Brands/{id}
 
 #### GET
 ##### Parameters
@@ -355,7 +359,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Brands/Update/{id}
+### /api/admin/Brands/Update/{id}
 
 #### PATCH
 ##### Parameters
@@ -370,7 +374,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Brands/ToggleStatus/{id}
+### /api/admin/Brands/ToggleStatus/{id}
 
 #### PATCH
 ##### Parameters
@@ -385,7 +389,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Brands/Delete/{id}
+### /api/admin/Brands/Delete/{id}
 
 #### DELETE
 ##### Parameters
@@ -400,7 +404,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Category/GetAll
+### /api/admin/Category/GetAll
 
 #### GET
 ##### Responses
@@ -409,7 +413,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Category/Get/{id}
+### /api/admin/Category/Get/{id}
 
 #### GET
 ##### Parameters
@@ -424,7 +428,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Category/Create
+### /api/admin/Category/Create
 
 #### POST
 ##### Responses
@@ -433,7 +437,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Category/Update/{id}
+### /api/admin/Category/Update/{id}
 
 #### PATCH
 ##### Parameters
@@ -448,7 +452,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Category/ToggleStatus/{id}
+### /api/admin/Category/ToggleStatus/{id}
 
 #### PATCH
 ##### Parameters
@@ -463,7 +467,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Category/Delete/{id}
+### /api/admin/Category/Delete/{id}
 
 #### DELETE
 ##### Parameters
@@ -478,7 +482,7 @@
 | ---- | ----------- |
 | 200 | OK |
 
-### /api/Admin/Product
+### /api/admin/Product
 
 #### GET
 ##### Parameters
