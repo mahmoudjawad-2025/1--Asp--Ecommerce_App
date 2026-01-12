@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PL.Areas.Admin
 {
-    [Route("api/[controller]")]
+    [Route("api/[area]/[controller]")]
     [ApiController]
     [Area("Admin")]
     [Authorize(Roles = "admin,superAdmin")]
