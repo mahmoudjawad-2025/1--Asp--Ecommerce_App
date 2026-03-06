@@ -19,7 +19,7 @@ A clean, scalable 3-layer architecture (DAL → BLL → PL) built for modern e-c
 - [🔑 Authentication Flow](#-authentication-flow)
 - [📦 API Modules](#-api-modules)
 - [❌ Error Handling](#-error-handling)
-- [⚙️ Getting Started](#-getting-started)
+- [⚙️ Getting Started](#setup)
 - [🔐 Environment Variables](#-environment-variables)
 - [📘 API Documentation](#-api-documentation)
 - [📞 Contact](#-contact)
@@ -265,7 +265,7 @@ Token validation handled via JWT Bearer middleware
 
 
 
-
+<a name="setup"></a>
 ## ⚙️ Getting Started
 
 ### Prerequisites
