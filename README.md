@@ -345,6 +345,6 @@ Configure the following in `appsettings.json` or environment variables:
 
 ## 📞 Contact
 
-📧 mahmoudjawad02025@gmail.com
-
-🔗 GitHub: [mahmoudjawad-2025](https://github.com/mahmoudjawad-2025/)
+- 📧 **Email**: [mahmoudjawad02025@gmail.com](mailto:mahmoudjawad02025@gmail.com)
+- 💻 **GitHub Profile**: [@mahmoudjawad-2025](https://github.com/mahmoudjawad-2025/)
+- 💼 **LinkedIn:** [linkedin.com/in/mahmoud-abu-alsebaa](https://linkedin.com/in/mahmoud-abu-alsebaa)
